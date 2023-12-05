@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controll-Moon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Controll Moon</h1>
+    </header>
+
+    <div class="login-container" id="loginContainer">
+        <h2>Faça Login</h2>
+        <label for="username">Usuário:</label>
+        <input id="username" type="text" placeholder="Digite seu usuário" autocomplete="off">
+        <label for="password">Senha:</label>
+        <input id="password" type="password" placeholder="Digite sua senha">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+        <a href="#" onclick="showPage('adicionar')">Adicionar Produto</a>
+        <a href="#" onclick="showPage('remover')">Remover Produto</a>
+        <a href="#" onclick="showPage('estoque')">Ver Estoque Completo</a>
+        <a href="#" onclick="showPage('historico')">Ver Histórico de Login</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+
+    <div class="container" id="mainContainer" style="display: none;">
+        <div class="adicionar-page" style="display: none;">
+            <!-- Conteúdo da página de adicionar produto -->
+            <h2>Adicionar Produto</h2>
+            <label for="nome">Nome do Produto:</label>
+            <input id="nome" type="text" placeholder="Nome do Produto" autocomplete="off">
+            <label for="quantidade">Quantidade:</label>
+            <input id="quantidade" type="number" placeholder="Quantidade">
+            <button onclick="adicionarProduto()">Adicionar Produto</button>
+        </div>
+
+        <div class="remover-page" style="display: none;">
+            <!-- Conteúdo da página de remover produto -->
+            <h2>Remover Produto</h2>
+            <label for="nomeRemover">Nome do Produto:</label>
+            <input id="nomeRemover" type="text" placeholder="Nome do Produto" autocomplete="off">
+            <label for="quantidadeRemover">Quantidade:</label>
+            <input id="quantidadeRemover" type="number" placeholder="Quantidade">
+            <button onclick="removerProduto()">Remover Produto</button>
+        </div>
+
+        <div class="estoque-page" style="display: none;">
+            <!-- Conteúdo da página de estoque -->
+            <h2>Estoque Completo</h2>
+            <div id="estoque"></div>
+            <!-- Botão para limpar o estoque -->
+            <button onclick="limparEstoque()">Limpar Estoque</button>
+        </div>
+
+        <div class="historico-page" style="display: none;">
+            <!-- Conteúdo da página de histórico de login -->
+            <h2>Histórico de Login</h2>
+            <ul id="historicoLogin"></ul>
+            <!-- Adicione este botão no final da div com id="historicoLogin" -->
+            <button onclick="limparHistorico()">Limpar Histórico</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
